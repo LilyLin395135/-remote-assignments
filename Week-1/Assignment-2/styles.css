@@ -1,0 +1,56 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px; /* Increase padding to make the block larger */
+    background-color: #f3f3f3;
+}
+
+.menu-items a {
+    text-decoration: none;
+    padding: 0 15px;
+    color: black;
+}
+
+.welcome-message{
+    text-align: center;
+    padding: 20px;
+    background-color: #98b7d6;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.content-box {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 200px;
+    height: 150px;
+    background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 1200px) {
+    .content-container {
+        padding: 0 20px;
+    }
+    .content-box {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content-box {
+        flex-basis: 100%;
+    }
+}
+
