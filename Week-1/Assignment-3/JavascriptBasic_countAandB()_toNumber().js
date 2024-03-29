@@ -1,4 +1,4 @@
-//count how many ‘a’ and ‘b’ letters are in the given input and return the total number
+//1.count how many ‘a’ and ‘b’ letters are in the given input and return the total number
 function countAandB (input){
     let countA = 0;
     let countB = 0;
@@ -24,8 +24,8 @@ function countAandB (input){
     return `${countA + countB} (${countA} 'a' ${aLetters} and ${countB} 'b' ${bLetters})`;
 }
 
-//convert English letters to numbers, let ‘a’ to be 1, ‘b’ to be 2, and so on.
-function convertToNumber(input){
+//2.convert English letters to numbers, let ‘a’ to be 1, ‘b’ to be 2, and so on.
+function toNumber(input){
     let result = [];
     for (let i = 0; i < input.length; i++){
         result.push(input[i].charCodeAt(0)-96);
@@ -36,10 +36,28 @@ function convertToNumber(input){
     //JSON.stringify()將JavaScript值轉換成JSON字串，就不會返回陣列內的元素個素
 }
 
+//2.(方法二)用Dictionary成對的key,value方式，convert English letters to numbers, let ‘a’ to be 1, ‘b’ to be 2, and so on.
+function convertToNumber(input){
+    let result = [];
+    let dictionary = {
+        'a': 1,
+        'b': 2,
+        'c': 3,
+        'd': 4,
+        'e': 5
+    };
+    for (let i = 0; i < input.length; i++){
+        result.push(dictionary[input[i]]);
+    }
+    return JSON.stringify(result);
+}
+
 let input1 = ['a','b','c','a','c','a','c'];
 console.log(countAandB(input1));
+console.log(toNumber(input1));
 console.log(convertToNumber(input1));
 
 let input2=['e','d','c','d','e'];
 console.log(countAandB(input2));
+console.log(toNumber(input2));
 console.log(convertToNumber(input2));
