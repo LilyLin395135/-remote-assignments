@@ -34,7 +34,36 @@
         <div class="call-to-action">
             <button>Call to Action</button>
         </div>
+        <div class="content-container hidden">
+            <div class="content-box">Content Box 5</div>
+            <div class="content-box">Content Box 6</div>
+            <div class="content-box">Content Box 7</div>
+            <div class="content-box">Content Box 8</div>
+        </div>
     </main>
+
+    <script>
+        // 取得第一個具有 welcome-message 類別的HTML元素。(得到DOM元素)
+        let welcomeMessage = document.querySelector('.welcome-message');
+
+        // welcome-message 這個DOM元素用click事件監聽器，被click時更改元素内部 <h2> 的内容。
+        welcomeMessage.addEventListener('click', function () {
+            // 更改文本内容
+            this.querySelector('h2').textContent = 'Have a Good Time!';
+        });
+
+        // 取得第一個具有 Call to Action 類別的HTML元素。(得到DOM元素)
+        let callToActionButton = document.querySelector('.call-to-action button');
+
+        // 取得第一個具有hidden類別的content-container的HTML元素。(得到DOM元素)
+        let hiddenContentcontainer = document.querySelector('.content-container.hidden');
+
+        // callToActionButton 這個DOM元素用click事件監聽器，被click時
+        callToActionButton.addEventListener('click', function () {
+            //將hiddenContentcontainer 做display:none 改為 flex; 顯示所有box。
+            hiddenContentcontainer.style.display = 'flex';
+            });
+    </script>
 </body>
 
 </html>

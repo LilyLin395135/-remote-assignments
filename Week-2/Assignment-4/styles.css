@@ -2,6 +2,7 @@ body,
 html {
     margin: 0;
     padding: 0;
+    padding-bottom: 20px; /* 底部增加空白 */
     font-family: Arial, sans-serif;
 }
 
@@ -10,8 +11,11 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 8px 40px;
-    /* Increase padding to make the block larger */
     background-color: #f3f3f3;
+    position: fixed; /* 固定 */
+    top: 0; /* 頁面頂部 */
+    width: 100%; /* 與頁面寬度相同 */
+    box-sizing: border-box; /* 確保 padding 不會影響nav總寬度 */
 }
 
 .menu-items a {
@@ -32,6 +36,7 @@ html {
     max-width: 1200px;
     margin: 0 auto;
     gap: 20px;
+    justify-content: center;
 }
 
 .content-box {
@@ -45,12 +50,6 @@ html {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.content-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 .content-box {
@@ -69,6 +68,10 @@ html {
     border: none;
     width: 120px;
     height: 45px;
+}
+
+.hidden {
+    display: none;
 }
 
 @media screen and (max-width: 1200px) {
