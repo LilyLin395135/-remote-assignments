@@ -4478,7 +4478,7 @@ aside var {
     -moz-margin-end: var(--devsite-banner-message-text-margin-x-end,auto);
     margin-inline-end:var(--devsite-banner-message-text-margin-x-end,auto)}
 
-.devsite-banner a: not(.button):focus,.devsite-banner[background] a:not(.button):focus {
+.devsite-banner a:not(.button):focus,.devsite-banner[background] a:not(.button):focus {
     background:var(--devsite-inverted-text-rgba);
     border-radius: 2px;
     margin: -4px;
@@ -6034,17 +6034,17 @@ devsite-content .devsite-breadcrumb-link:focus,devsite-content .devsite-breadcru
     -moz-margin-start: var(--devsite-button-material-icon-margin-x,-4px);
     margin-inline-start:var(--devsite-button-material-icon-margin-x,-4px)}
 
-.button: not(.button-with-icon)>.icon-after {
+.button:not(.button-with-icon)>.icon-after {
     -webkit-margin-end:var(--devsite-button-material-icon-margin-x,-4px);
     -moz-margin-end: var(--devsite-button-material-icon-margin-x,-4px);
     margin-inline-end:var(--devsite-button-material-icon-margin-x,-4px)}
 
-.button-white: not(.button-with-icon)>.material-icons:not(.icon-after) {
+.button-white:not(.button-with-icon)>.material-icons:not(.icon-after) {
     -webkit-margin-start:var(--devsite-button-white-material-icon-margin-x,4px);
     -moz-margin-start: var(--devsite-button-white-material-icon-margin-x,4px);
     margin-inline-start:var(--devsite-button-white-material-icon-margin-x,4px)}
 
-.button-white: not(.button-with-icon)>.icon-after {
+.button-white:not(.button-with-icon)>.icon-after {
     -webkit-margin-end:var(--devsite-button-white-material-icon-margin-x,4px);
     -moz-margin-end: var(--devsite-button-white-material-icon-margin-x,4px);
     margin-inline-end:var(--devsite-button-white-material-icon-margin-x,4px)}
@@ -26039,7 +26039,7 @@ devsite-select .devsite-select-toggle-count {
     -moz-margin-start: var(--devsite-select-count-margin-inline-start,6px);
     margin-inline-start:var(--devsite-select-count-margin-inline-start,6px)}
 
-devsite-select .devsite-select-toggle-count[parens]: not(:empty):before {
+devsite-select .devsite-select-toggle-count[parens]:not(:empty):before {
     content:"("
 }
 
@@ -26876,7 +26876,7 @@ devsite-tabs tab.devsite-dropdown .devsite-tabs-dropdown-toggle {
     display: flex;
     padding-block:0;padding-inline:0 var(--devsite-dropdown-toggle-padding-x,0)}
 
-devsite-tabs tab.devsite-dropdown .devsite-tabs-dropdown-toggle: before,devsite-tabs.upper-tabs .devsite-icon-arrow-drop-down:before {
+devsite-tabs tab.devsite-dropdown .devsite-tabs-dropdown-toggle:before,devsite-tabs.upper-tabs .devsite-icon-arrow-drop-down:before {
     width:24px;
     height: 24px;
     overflow: hidden;
@@ -26885,7 +26885,7 @@ devsite-tabs tab.devsite-dropdown .devsite-tabs-dropdown-toggle: before,devsite-
     -webkit-transition: background .2s,color .2s,-webkit-transform .2s;
     transition: background .2s,color .2s,-webkit-transform .2s;
     transition: background .2s,color .2s,transform .2s;
-    transition: background .2s,color .2s,transform .2s,-webkit-transform .2s
+    transition: background .2s,color .2s,transform .2s,-webkit-transform .2s;
 }
 
 devsite-tabs tab.devsite-dropdown .devsite-tabs-dropdown-toggle:focus:before,devsite-tabs tab.devsite-overflow-tab .devsite-icon-arrow-drop-down:focus:before {
