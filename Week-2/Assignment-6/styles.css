@@ -1,0 +1,91 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 20px; /* 底部增加空白 */
+    font-family: Arial, sans-serif;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px;
+    background-color: #f3f3f3;
+    position: fixed; /* 固定 */
+    top: 0; /* 頁面頂部 */
+    width: 100%; /* 與頁面寬度相同 */
+    box-sizing: border-box; /* 確保 padding 不會影響nav總寬度 */
+}
+
+.menu-items a {
+    text-decoration: none;
+    padding: 0 15px;
+    color: black;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #98b7d6;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    justify-content: center;
+}
+
+.content-box {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 200px;
+    height: 150px;
+    background-color: #f0f0f0;
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content-box {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.call-to-action {
+    margin-top: 20px;
+}
+
+.call-to-action button {
+    background-color: rgb(191, 229, 241);
+    display: block;
+    margin: 0 auto;
+    border: none;
+    width: 120px;
+    height: 45px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .content-container {
+        padding: 0 20px;
+    }
+
+    .content-box {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content-box {
+        flex-basis: 100%;
+    }
+}
