@@ -43,31 +43,39 @@
     </main>
 
     <script>
-        // 取得第一個具有 welcome-message 類別的HTML元素。(得到DOM元素)
+        // 1: Click to Change Text.
+        //When the user clicks on the "Welcome Message" block, change the text to "Have a Good Time!".
         let welcomeMessage = document.querySelector('.welcome-message');
 
-        // welcome-message 被click時更改元素内部 <h2> 的内容。
         welcomeMessage.addEventListener('click', function () {
             this.querySelector('h2').textContent = 'Have a Good Time!';
         });
 
+        //2. Click to Show More Content Boxes.
         let callToActionButton = document.querySelector('.call-to-action button');
 
         let hiddenContentcontainer = document.querySelector('.content-container.hidden');
 
-        // callToActionButton 被click時
         callToActionButton.addEventListener('click', function () {
 
-            if (hiddenContentcontainer.style.display === 'none') {
-                //將hiddenContentcontainer display:none 改為 flex; 顯示所有box。
-                hiddenContentcontainer.style.display = 'flex';
-            }
-            else {
-                //將hiddenContentcontainer display:flex 改為 none; 隱藏所有box。
-                hiddenContentcontainer.style.display = 'none';
-            }
-        });
+            //解法一
+            // if (hiddenContentcontainer.style.display === 'none' || hiddenContentcontainer.style.display === '') {
+            //     hiddenContentcontainer.style.display = 'flex';
+            // }
+            // else {
+            //     hiddenContentcontainer.style.display = 'none';
+            // }
 
+            //解法二
+            // if (hiddenContentcontainer.style.display === 'flex') {
+            //     hiddenContentcontainer.style.display = 'none';
+            // } else {
+            //     hiddenContentcontainer.style.display = 'flex';
+            // }
+
+            //解法二 (改用三元運算子)
+            hiddenContentcontainer.style.display = hiddenContentcontainer.style.display === 'flex' ? 'none' : 'flex';            
+        });
     </script>
 </body>
 

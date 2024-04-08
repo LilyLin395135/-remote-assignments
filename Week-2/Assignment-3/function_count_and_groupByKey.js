@@ -1,4 +1,28 @@
 //1. count: return an object which shows the count of each character.
+//改寫法直接判斷某個key是不是存在陣列中，用in
+function count01(input) {
+    let result = {};
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] in result) {
+            result[input[i]] += 1;
+        } else {
+            result[input[i]] = 1;
+        }
+    }
+    return result;
+}
+
+//改寫法直接判斷某個key是不是存在陣列中，用hasOwnProperty()
+function count02(input) {
+    let result = {};
+    for (let i = 0; i < input.length; i++) {
+        if (result.hasOwnProperty(input[i])) {
+            result[input[i]] += 1;
+        } else {
+            result[input[i]] = 1;
+        }
+    }
+
 //寫法一，用較嚴謹的if判斷式，來實現程式碼。
 function count1(input) {
     //建立空的物件。javascript 物件是以(dictionary的方式) key-value pair 的方式儲存資料。
@@ -51,6 +75,7 @@ function count3(input) {
 }
 
 let input1 = ["a", "b", "c", "a", "c", "a", "x"];
+console.log(count01(input1));
 console.log(count1(input1));
 console.log(count2(input1));
 console.log(count3(input1));
