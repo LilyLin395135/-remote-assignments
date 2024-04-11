@@ -5,31 +5,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <input type="text" id="number" placeholder="Enter a number" />
-    <button id="submit">Submit</button>
+    <!--將input框和按紐都包在form裡面，將按紐type屬性設為submit。
+    當按按鈕或按enter時，都會觸發form的submit事件進而觸發handleRequest函數-->
+    <form id="sum-form">
+      <input type="text" id="number" placeholder="Enter a number" />
+      <button type="submit" id="submit">Submit</button>
+    </form>
     <p id="result"></p>
     <script>
       // 使用 jQuery 的 $(document).ready() 方法，確保網頁載入完成後才執行程式碼
       $(document).ready(function () {
-        // 當按下 submit 按鈕時，取得 input 欄位的數字，並透過 AJAX 向伺服器發送請求
-        $("#submit").click(function () {
+        //處理ajax請求的函數
+        function handleRequest(event) {
+          event.preventDefault(); //阻止表單預設提交
           var number = $("#number").val();
           $.ajax(
-          //ajax的參數是物件
-          //物件內屬性包含：url, type, success  
-          {
-            url: "http://localhost:3000/data?number=" + number,
-            type: "GET",
-            success: function (data) {
-              //.text()取得data文字內容
-              $("#result").text(data);
-            },
-            //xhr，XMLHttpRequest物件，包含請求的訊息
-            error: function (xhr, status, error) {
-              console.error(error);
+            //ajax的參數是物件
+            //物件內屬性包含：url, type, success
+            {
+              url: "http://localhost:3000/data?number=" + number,
+              type: "GET",
+              success: function (data) {
+                //.text()取得data文字內容
+                $("#result").text(data);
+              },
+              //xhr，XMLHttpRequest物件，包含請求的訊息
+              error: function (xhr, status, error) {
+                console.error(error);
+              },
             }
-          });
-        });
+          );
+        }
+        //觸發sum-form表單的 submit 事件，執行handleRequest函數
+        $("#sum-form").on("submit", handleRequest);
       });
     </script>
   </body>
