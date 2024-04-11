@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sum 1 to N</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <input type="text" id="number" placeholder="Enter a number" />
+    <button id="submit">Submit</button>
+    <p id="result"></p>
+    <script>
+      // 使用 jQuery 的 $(document).ready() 方法，確保網頁載入完成後才執行程式碼
+      $(document).ready(function () {
+        // 當按下 submit 按鈕時，取得 input 欄位的數字，並透過 AJAX 向伺服器發送請求
+        $("#submit").click(function () {
+          var number = $("#number").val();
+          $.ajax(
+          //ajax的參數是物件
+          //物件內屬性包含：url, type, success  
+          {
+            url: "http://localhost:3000/data?number=" + number,
+            type: "GET",
+            success: function (data) {
+              //.text()取得data文字內容
+              $("#result").text(data);
+            },
+            //xhr，XMLHttpRequest物件，包含請求的訊息
+            error: function (xhr, status, error) {
+              console.error(error);
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -3,21 +3,6 @@
 
 <head>
     <title>Submit Your Name</title>
-</head>
-
-<body>
-    <h2>Submit Your Name</h2>
-    <div class="form-container">
-        <!--使用 <form> 表單，並設定表單的 method 屬性為 get 時，
-            會自動將表單內的各個 <input> 元素（及其對應的值）轉換成查詢字串（Query String）的格式。 -->
-        <form action="http://localhost:3000/trackName" method="get">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
-            <input type="submit" value="Submit">
-        </form>
-        <h3>Thank you😊</h3>
-    </div>
-
     <style>
         body {
             display: flex;
@@ -67,6 +52,20 @@
             margin: 10px 0;
         }
     </style>
+</head>
+
+<body>
+    <h2>Submit Your Name</h2>
+    <div class="form-container">
+        <!--使用 <form> 表單，並設定表單的 method 屬性為 get 時，
+            會自動將表單內的各個 <input> 元素（及其對應的值）轉換成查詢字串（Query String）的格式。 -->
+        <form action="http://localhost:3000/trackName" method="get">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+            <input type="submit" value="Submit">
+        </form>
+        <h3>Thank you😊</h3>
+    </div>
 </body>
 
 </html>
