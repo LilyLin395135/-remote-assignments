@@ -3,8 +3,46 @@
   <head>
     <title>Sum 1 to N</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10;
+        margin-top: 50px;
+      }
+
+      #sum-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      input[type="text"] {
+        margin: 10px 0;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+
+      button[type="submit"] {
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      
+    </style>
   </head>
   <body>
+    <h2>Sum from 1 to the number you entered</h2>
     <!--將input框和按紐都包在form裡面，將按紐type屬性設為submit。
     當按按鈕或按enter時，都會觸發form的submit事件進而觸發handleRequest函數-->
     <form id="sum-form">
