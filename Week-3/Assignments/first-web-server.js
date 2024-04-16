@@ -33,9 +33,11 @@ app.get("/data", (request, response) => {
   if (number === undefined) {
     //undefined已宣告但未賦值
     response.send("Lack of Parameter"); //res.send()發送響應給客戶，會在瀏覽器上看到。
-  } else if (isNaN(number)) {
+  } 
+  else if (isNaN(number)||number<0) {
     response.send("Wrong Parameter");
-  } else {
+  } 
+  else {
     let sum = 0;
     for (let i = 1; i <= number; i++) {
       sum += i;
@@ -66,7 +68,12 @@ app.get("/myName", (request, response) => {
 //再轉回給/myName，這時/myName也能從cookie撈得到資料了。
 app.get("/trackName", (request, response) => {
   const name = request.query.name;
-  response.cookie("name", name);
+  response.cookie("name", name,{
+    httpOnly: true, //禁止JavaScript讀取cookie
+    secure: true, //只在https下傳輸
+    sameSite: 'None', //嚴格限制第三方 Cookie
+    maxAge:86400000 //設置cookie的有效時間24小時
+  });
   response.redirect("/myName");
 });
 
