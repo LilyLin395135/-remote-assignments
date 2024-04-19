@@ -1,6 +1,11 @@
 function delayedResult(n1, n2, delayTime, callback) {
     setTimeout(() => {
+        if(isNaN(n1) || isNaN(n2)){
+            callback('Please input number only');
+        }
+        else{
         callback(n1 + n2);
+        }
     }, delayTime);
 }//setTimeout(callback, delay)
 
@@ -11,6 +16,10 @@ delayedResult(4, 5, 3000, function(result) {
 delayedResult(-5, 10, 2000, function(result) {
     console.log(result);
 }); // 5 (-5+10) will be shown in the console after 2 seconds
+
+delayedResult(-5, 'a', 2000, function(result) {
+    console.log(result);
+}); // Please input number only
 
 //Event Loop處理步驟：
 //delayedResult(4, 5, 3000, function(result) {console.log(result);});被放入Call Stack
