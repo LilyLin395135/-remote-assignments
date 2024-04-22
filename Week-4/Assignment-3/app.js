@@ -6,24 +6,13 @@ import { getUsers, getUserById, getUserByEmail, getUserByEmailAndPassword, creat
 const app = express();
 app.use(express.json()); //使用express.json() middleware 解析request.body中的JSON資料
 app.use(express.urlencoded({ extended: true })); //使用express.urlencoded() middleware 解析請求主體中的urlencoded資料
+app.set("view engine", "ejs"); //設定view engine為ejs
+app.set("views", "./views"); //設定views目錄為views
 
 //首頁，包含註冊和登入表單
 app.get("/", (request, response) => {
   const errorMessage = request.query.error; // 從查詢字串中獲取錯誤訊息
-  response.send(`
-  <h1>Home Page</h1>
-  ${errorMessage ? `<p style="color:red;">${errorMessage}</p>` : ""}
-  <form method="post" action="/signup">
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <input type="password" name="password" placeholder="Enter your password" required />
-    <button type="submit">Sign Up</button>
-  </form>
-  <form method="post" action="/signin">
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <input type="password" name="password" placeholder="Enter your password" required />
-    <button type="submit">Sign In</button>
-  </form>
-`);
+  response.render("home", { errorMessage}); // 將錯誤訊息傳遞給home.ejs
 });
 
 // 註冊處理
@@ -58,7 +47,7 @@ app.post("/signin", async (request, response) => {
 
 //會員頁面
 app.get("/member", (request, response) => {
-  response.send("<h1>Welcome to Member Page!</h1>");
+  response.render("member");
 });
 
 //設定伺服器監聽的埠號

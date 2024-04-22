@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In/Sign Up</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <% if (errorMessage) { %>
+        <p style="color:red;"><%= errorMessage %></p>
+    <% } %>
+    <form method="post" action="/signup">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <input type="password" name="password" placeholder="Enter your password" required />
+        <button type="submit">Sign Up</button>
+    </form>
+    <form method="post" action="/signin">
+        <input type="email" name="email" placeholder="Enter your email" required />
+        <input type="password" name="password" placeholder="Enter your password" required />
+        <button type="submit">Sign In</button>
+    </form>
+</body>
+</html>
